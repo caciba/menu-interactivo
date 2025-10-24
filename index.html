@@ -53,6 +53,7 @@
     padding: 0;
     background-color: #1a1a1a;
     color: #DE2910;
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
 }
 
 header {
@@ -74,7 +75,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em; /* Aumentado de 2em a 2.5em */
+    font-size: 2.5em;
     text-shadow: 2px 2px #000;
 }
 
@@ -82,6 +83,7 @@ header h1 {
     width: 100%;
     margin: 20px 0;
     padding: 0 10px;
+    min-height: calc(100vh - 120px); /* Resta la altura del header (aprox. 100px) para que el contenedor ocupe el resto */
 }
 
 .category {
@@ -99,7 +101,7 @@ header h1 {
     margin: 0;
     border-radius: 8px 8px 0 0;
     cursor: pointer;
-    font-size: 1.5em; /* Aumentado de 1.2em a 1.5em */
+    font-size: 1.5em;
     text-shadow: 1px 1px #000;
 }
 
@@ -107,10 +109,12 @@ header h1 {
     width: 100%;
     border-collapse: collapse;
     display: none;
+    box-sizing: border-box; /* Incluye padding y bordes en el cálculo de altura */
 }
 
 .category.active table {
     display: table;
+    height: 100%; /* Ocupa el 100% de la altura del contenedor padre cuando está activa */
 }
 
 .category table td {
@@ -151,14 +155,15 @@ header h1 {
     .menu-container {
         margin: 10px 0;
         padding: 0;
+        min-height: calc(100vh - 100px); /* Ajuste para móviles, asumiendo header más pequeño */
     }
 
     header h1 {
-        font-size: 2em; /* Aumentado de 1.5em a 2em */
+        font-size: 2em;
     }
 
     .category h2 {
-        font-size: 1.3em; /* Aumentado de 1em a 1.3em */
+        font-size: 1.3em;
     }
 
     .category table td {
@@ -180,6 +185,10 @@ header h1 {
         display: block;
         text-align: left;
         width: 100% !important;
+    }
+
+    .category.active table {
+        height: auto; /* En móviles, la altura se ajusta al contenido apilado */
     }
 
     .item-trago, .item-botella {

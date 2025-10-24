@@ -47,13 +47,13 @@
     <title>Menú Digital</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-       body {
+      body {
     font-family: 'Bebas Neue', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1a1a1a;
     color: #DE2910;
-    min-height: 100vh; /* Solo el body ocupa el 100% de la altura de la pantalla */
+    min-height: 100vh;
 }
 
 header {
@@ -80,10 +80,9 @@ header h1 {
 }
 
 .menu-container {
-    width: 100%;
-    margin: 20px 0;
+    width: 80%; /* Cambiado de 100% a 80% */
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
     padding: 0 10px;
-    /* Eliminamos min-height para que se ajuste al contenido */
 }
 
 .category {
@@ -91,7 +90,7 @@ header h1 {
     border: 2px solid #00CED1;
     border-radius: 8px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 100%; /* Mantiene el 100% dentro del contenedor de 80% */
 }
 
 .category h2 {
@@ -106,15 +105,14 @@ header h1 {
 }
 
 .category table {
-    width: 100%;
+    width: 100%; /* Ocupa el 100% del contenedor .category */
     border-collapse: collapse;
     display: none;
-    box-sizing: border-box; /* Mantiene padding y bordes dentro del ancho */
+    box-sizing: border-box;
 }
 
 .category.active table {
     display: table;
-    /* Eliminamos height: 100% para que se ajuste al contenido */
 }
 
 .category table td {
@@ -153,7 +151,8 @@ header h1 {
 /* Media query para pantallas pequeñas (celulares) */
 @media (max-width: 600px) {
     .menu-container {
-        margin: 10px 0;
+        width: 80%; /* Mantiene 80% en móviles, centrado */
+        margin: 10px auto; /* Ajuste de márgenes para móviles */
         padding: 0;
     }
 
@@ -187,7 +186,7 @@ header h1 {
     }
 
     .category.active table {
-        height: auto; /* Asegura que se ajuste al contenido en móviles */
+        height: auto;
     }
 
     .item-trago, .item-botella {
